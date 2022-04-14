@@ -12,8 +12,20 @@ function loadData() {
     $nytElem.text("");
 
     // load streetview
-
-    // YOUR CODE GOES HERE!
+	var yourApiKey = '';
+	var streetStr = $('#street').val();
+	var cityStr = $('#city').val();
+	var address = streetStr + ', ' + cityStr;
+	
+	$greeting.text('So, you want to live at ' + address + '?');
+	
+	var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&key=' + yourApiKey + '&location=' + address + '';
+	$body.append('<img class="bgimg" src="' + streetviewUrl + '">');
+	
+	// Example 01: 
+	// Street: 24 willie mays plaza
+	// City: san fransisco, ca
+	// SUBMIT
 
     return false;
 };
